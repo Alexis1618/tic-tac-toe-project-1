@@ -1,17 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="  UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1> Tic Tac Toe</h1>
+      <main>
+        <section>
+            <h3>SignUp:</h3>
+            <form id="SignUp">
+            <input name="credentials[email]" type='email'
+            placeholder="Email" required>
+            <input name="credentials[password]" type='password'
+            placeholder="Password" required>
+            <input name="credentials[password_confirmation]" type='password'
+            placeholder="password_confirmation" required>
+            <button type="submit">Submit</button>
+          </section>
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+          <section>
+             <h3>SignIn:</h3>
+             <form id="SignIn”>
+             <input name="credentials[email]" type='email'
+             placeholder="Email" required>
+             <input name="credentials[password]" type='password'
+             placeholder="Password" required>
+             <button type="submit">Submit</button>
+           </section>
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+           <h3>ChangePassword:</h3>
+           <form id="ChangePassword">
+           <input name="credentials[password]" type='password'
+           placeholder=" Old Password" required>
+           <input name="credentials[ Old Password]" type='password'
+           placeholder="Password" required>
+           <button type="sumbit">Sumbit</button>
+
+           <h3>SignOut:</h3>
+         <form id="SignOut"</form>
+         <button type="sumbit">Push</button></form>
+
+         <h3>Rest:</h3>
+       <form id="reset"</form>
+       <button type="sumbit">Push</button></form>
+
+
+
+
+      </main>
+
+
+
+      <div class="row border-b">
+            <div class="col border-r"></div>
+            <div class="col border-r"></div>
+            <div class="col"></div>
+      </div>
+      <div class="row border-b">
+            <div class="col border-r"></div>
+            <div class="col border-r"></div>
+            <div class="col"></div>
+      </div>
+      <div class="row">
+            <div class="col border-r"></div>
+            <div class="col border-r"></div>
+            <div class="col"></div>
+      </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

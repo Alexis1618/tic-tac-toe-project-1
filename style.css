@@ -1,0 +1,46 @@
+.container {
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.row {
+  height: 100px;
+}
+
+.col {
+  height: 100px;
+  width: 100px;
+  float: left;
+  font-size: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.col:hover {
+    background-color: lightgray;
+}
+
+.border-b {
+  border-bottom: 10px solid blue;
+}
+
+.border-r {
+  border-right: 10px solid blue;
+}
+
+.winner {
+    color: pink;
+}
+
+body {
+  background-image: url("https://fsa.zobj.net/crop.php?r=LOkv0AeRik-5n-diBXbXr15xh5bHsanDImIR25o3UMLHalv70zaLnCLE1QX2JL3n_GAWJLC72Dp84ZhAPTHqTlbOaZFy7L6w97YDlWry7rOlcnFKWTk3dV3JUmMaiM0Rw05wuJLjz7lbd62QLUa81z7vdSbUdjFanX5uxqNvqWN36d8T2ubj-4aqXxw");
+  background-repeat:repeat;
+  background-size:1000px;
+}
