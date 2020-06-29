@@ -1,5 +1,8 @@
-const config = require('./config.js')
-const store = require('./store.js')
+'use strict'
+
+const config = require('./../config.js')
+const store = require('./../store.js')
+
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
@@ -13,6 +16,7 @@ const signUp = function (data) {
     }
   })
 }
+
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
@@ -25,10 +29,11 @@ const signIn = function (data) {
     }
   })
 }
-const changePw = function (data) {
+
+const changePassword = function (data) {
   return $.ajax({
-    method: 'PATCH',
     url: config.apiUrl + '/change-password',
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -40,17 +45,20 @@ const changePw = function (data) {
     }
   })
 }
+
 const signOut = function () {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
+
 module.exports = {
   signUp,
   signIn,
-  changePw,
+  changePassword,
   signOut
+}

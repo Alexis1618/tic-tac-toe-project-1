@@ -1,63 +1,85 @@
-const store = require('./store')
-const signUpSuccess = function (response) {
-  console.log(response)
+
+'use strict'
+const store = require('./../store.js')
+
+const signUpSuc = function (response) {
   $('form').trigger('reset')
-  $('#sign-up-content').text('Sign up complete ' + response.user.email)
-  $('#sign-up-content').show()
+  $('#authMess').text('Sign up successfull! Hello ' + response.user.email).show(400).removeClass().addClass('success')
+
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const signUpFailure = function () {
+const signUpFail = function () {
   $('form').trigger('reset')
-  $('#sign-up-content').text('Sign up failed')
-  $('#sign-up-content').show()
+  $('#authMess').text('Sign up failed').show().removeClass().addClass('failure')
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const signInSuccess = function (response) {
+const signInSuc = function (response) {
   $('form').trigger('reset')
-  $('#sign-up-content').text('Signed in ' + response.user.email)
-  $('#sign-up-content').show()
-  $('.hidden').removeClass()
-  $('.show').hide()
-  $('#play-game').show()
+  $('#authMess').text('Signed in ' + response.user.email).show().removeClass(400).addClass('success')
+  $('#signUp').hide()
+  $('#signIn').hide()
+  $('#changePassword').show()
+  $('#gameOn').show()
+  $('#signOut').show()
   store.user = response.user
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const signInFailure = function (response) {
+const signInFail = function (response) {
   $('form').trigger('reset')
-  $('#sign-up-content').text('Signed in failed')
-  $('#sign-up-content').show()
+  $('#authMess').text('Signed in failed').show(400).addClass('failed')
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const changePwSuccess = function () {
+const changePassSuc = function () {
   $('form').trigger('reset')
-  $('#change-pw').text('Password changed successfully')
-  $('#change-pw').removeClass()
-  $('#change-pw').addClass('success')
+  $('#authMess').text('Password changed').show(400).removeClass().addClass('success')
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const changePwFailure = function () {
+const changePassFail = function () {
   $('form').trigger('reset')
-  $('#change-pw').text('Password change failed')
-  $('#change-pw').removeClass()
-  $('#change-pw').addClass('failure')
+  $('#authMess').text('Password change has failed').show(400).removeClass().addClass('failed')
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const signOutSuccess = function () {
-  $('#sign-out').text('You are now signed out. Please sign in again to play.')
-  $('#sign-out').removeClass()
-  $('#sign-out').addClass('success')
-  $('#new-game').addClass('hidden')
-  $('#change-pw').addClass('hidden')
-  $('.show').show()
-  $('#play-game').hide()
-  store.user = null
+const signOutSuc = function () {
+  $('#authMess').text('GoodBye see you again.').show(400).removeClass().addClass('success')
+  $('#newGame').addClass('hidden')
+  $('#signup').show()
+  $('#signIn').show()
+  $('#changePassword').hide()
+  $('.change-pw-bttn').hide()
+  $('.row').hide()
+  $('#signOut').hide()
+  store.user.token = null
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
-const signOutFailure = function () {
-  $('#sign-out').text('Signed Out Failed')
-  $('#sign-out').removeClass()
-  $('#sign-out').addClass('failure')
+const signOutFail = function () {
+  $('#authMess').text('Signed Out Failed')
+  $('#authMess').removeClass().addClass('failed')
+  setTimeout(() => {
+    $('#message').hide(250)
+  }, 2500)
 }
 module.exports = {
-  signUpSuccess,
-  signUpFailure,
-  signInSuccess,
-  signInFailure,
-  changePwSuccess,
-  changePwFailure,
-  signOutSuccess,
-  signOutFailure
+  signUpSuc,
+  signUpFail,
+  signInSuc,
+  signInFail,
+  changePassSuc,
+  changePassFail,
+  signOutSuc,
+  signOutFail
+
 }

@@ -5,18 +5,50 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
+  background-image: url('https://fsa.zobj.net/crop.php?r=LOkv0AeRik-5n-diBXbXr15xh5bHsanDImIR25o3UMLHalv70zaLnCLE1QX2JL3n_GAWJLC72Dp84ZhAPTHqTlbOaZFy7L6w97YDlWry7rOlcnFKWTk3dV3JUmMaiM0Rw05wuJLjz7lbd62QLUa81z7vdSbUdjFanX5uxqNvqWN36d8T2ubj-4aqXxw');
+  background-repeat: auto;
+  background-size: 1000px;
 }
 
 .box {
   align-items: center;
-  background-color: $secondary;
-  border: 1px solid $purple;
-  color: $font-color;
+  color: black;
   display: flex;
-  height: 80px;
+  height: 70px;
   justify-content: center;
+  padding: 40px;
+  color: white;
+  text-shadow: 2px 2px pink;
+  font-size: 10vh;
+  user-select: none;
 }
 
-.alt-color {
-  background-color: $alt-color;
+#one, #two, #four, #five {
+  border-right: 7px solid blue;
+  border-bottom: 7px solid blue;
+}
+
+#three, #six {
+  border-bottom: 7px solid blue;
+}
+
+#seven, #eight {
+  border-right: 7px solid blue;
+}
+
+
+.container {
+  margin-top: 10px;
+  width: 600px;
+}
+
+.container > h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+
+
+.winner {
+  color: #ffc0cb;
 }
