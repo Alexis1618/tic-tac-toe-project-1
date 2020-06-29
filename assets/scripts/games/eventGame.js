@@ -24,7 +24,7 @@ const onNewGame = function (e) {
   e.preventDefault()
 
   if ($(e.target).is(':empty')) {
-    store.game.cells[$(e.target).data('cell-index')] = gamer
+    store.game.cells[$(event.target).data('cell-index')] = gamer
     $(e.target).text(gamer)
     if (gamer === 'x') {
       gamer = 'o'
